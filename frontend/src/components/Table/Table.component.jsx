@@ -6,7 +6,7 @@ import "./Table.styles.css";
 
 const Table = (props) => {
   const { transactions } = props;
-  const { currentPage, pageLimit } = useSelector(selectPaginationData);
+  const paginationData = useSelector(selectPaginationData);
   const loc = useLocation().pathname;
 
   return (
@@ -29,7 +29,10 @@ const Table = (props) => {
                 <td>
                   {loc === "/search"
                     ? i + 1
-                    : (Number(currentPage) - 1) * pageLimit + i + 1}
+                    : (Number(paginationData.currentPage) - 1) *
+                        paginationData.pageLimit +
+                      i +
+                      1}
                 </td>
                 <td>{data.Txhash}</td>
                 <td>{data.Address}</td>

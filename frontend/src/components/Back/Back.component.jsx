@@ -10,7 +10,7 @@ const Back = () => {
   };
   return (
     <button className="back" onClick={clickHandler}>
-      <i class="fa-sharp fa-solid fa-arrow-left"></i>
+      <i className="fa-sharp fa-solid fa-arrow-left"></i>
     </button>
   );
 };
