@@ -31,10 +31,16 @@ const Pagination = ({ paginationData }) => {
   };
 
   return (
-    <div className="pagination">
-      <button onClick={leftButtonClickHandler}>❮</button>
-      <button onClick={rightButtonClickHandler}>❯</button>
-    </div>
+    <>
+      <div className="pagination">
+        <button onClick={leftButtonClickHandler}>❮</button>
+        <button onClick={rightButtonClickHandler}>❯</button>
+      </div>
+      <p>
+        Page {paginationData.currentPage} of{" "}
+        {Math.floor(paginationData.totalPages)}
+      </p>
+    </>
   );
 };
 
