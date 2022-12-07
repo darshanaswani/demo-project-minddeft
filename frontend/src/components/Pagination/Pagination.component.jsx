@@ -7,24 +7,24 @@ const Pagination = ({ paginationData }) => {
   const dispatch = useDispatch();
 
   const leftButtonClickHandler = () => {
-    if (Number(paginationData.currentPage) === 1) {
+    if (Number(paginationData?.currentPage) === 1) {
       return;
     }
     dispatch(
       fetchTransactionsAsync({
-        page: Number(paginationData.currentPage) - 1,
+        page: Number(paginationData?.currentPage) - 1,
         limit: 20,
       })
     );
   };
 
   const rightButtonClickHandler = () => {
-    if (Number(paginationData.currentPage) === paginationData.totalPages) {
+    if (Number(paginationData?.currentPage) === paginationData?.totalPages) {
       return;
     }
     dispatch(
       fetchTransactionsAsync({
-        page: Number(paginationData.currentPage) + 1,
+        page: Number(paginationData?.currentPage) + 1,
         limit: 20,
       })
     );
@@ -37,8 +37,8 @@ const Pagination = ({ paginationData }) => {
         <button onClick={rightButtonClickHandler}>❯</button>
       </div>
       <p>
-        Page {paginationData.currentPage} of{" "}
-        {Math.floor(paginationData.totalPages)}
+        Page {paginationData?.currentPage} of{" "}
+        {Math.floor(paginationData?.totalPages)}
       </p>
     </>
   );
