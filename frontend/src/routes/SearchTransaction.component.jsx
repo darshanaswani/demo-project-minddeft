@@ -4,15 +4,26 @@ import Table from "../components/Table/Table.component";
 import {
   selectSearchDataArray,
   selectSearchDataIsLoading,
+  selectTotalAmount,
 } from "../redux/searchData/searchData.selector";
 import Spinner from "../components/Spinner/Spinner.component";
 
 const SearchTransaction = () => {
   const searchDataArray = useSelector(selectSearchDataArray);
   const isLoading = useSelector(selectSearchDataIsLoading);
+  const totalAmount = useSelector(selectTotalAmount);
 
   return (
-    <>{isLoading ? <Spinner /> : <Table transactions={searchDataArray} />}</>
+    <>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <>
+          <h2 className="total-amount">Total amount: {totalAmount}</h2>
+          <Table transactions={searchDataArray} />
+        </>
+      )}
+    </>
   );
 };
 
