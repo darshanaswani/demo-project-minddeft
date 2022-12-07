@@ -1,0 +1,11 @@
+.search-box-container {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  margin-top: 20px;
+}
+.search-subcontainer {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}

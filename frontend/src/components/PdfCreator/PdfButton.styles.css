@@ -1,0 +1,15 @@
+.download {
+  display: flex;
+  align-items: center;
+  background-color: #455165;
+  width: 50px;
+  justify-content: center;
+  border-radius: 5px;
+  color: white;
+}
+.download:disabled {
+  opacity: 0.5;
+}
+.download-icon {
+  font-size: 24px;
+}
